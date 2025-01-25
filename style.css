@@ -1,0 +1,46 @@
+/* General body styling */
+body {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Moon base styling */
+.moon {
+    background-color: black;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(20, 20, 20, 0.3);
+}
+
+/* Glowing effect using ::before pseudo-element */
+.moon::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 210px;
+    height: 210px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.5);
+    animation: moonGlow 3s ease-in-out infinite alternate;
+}
+
+/* Moon glowing animation */
+@keyframes moonGlow {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
